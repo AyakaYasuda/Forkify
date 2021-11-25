@@ -26,6 +26,8 @@
     "last 3 Chrome versions"
   ],
   "dependencies": {
+    "core-js": "^3.19.1",
+    "regenerator-runtime": "^0.13.9",
     "sass": "^1.26.10"
   }
 }
