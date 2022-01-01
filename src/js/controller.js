@@ -15,10 +15,10 @@ if (module.hot) {
 const controllRecipes = async function () {
   try {
     const id = window.location.hash.slice(1);
-
+    
     if (!id) return;
     recipeView.renderSpinner();
-
+    
     // 1) Loading recipe
     await model.loadRecipe(id);
 
