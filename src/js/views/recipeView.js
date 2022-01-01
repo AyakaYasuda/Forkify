@@ -1,18 +1,18 @@
-import View from './View'
+import View from './View';
 
 // import icons from '../img/icons.svg'; // Parcel 1
 import icons from 'url:../../img/icons.svg'; // Parcel 1
-import { Fraction } from 'fractional';
+import { fracty } from 'fracty';
 
 class RecipeView extends View {
   _parentElement = document.querySelector('.recipe');
   _errorMessage = 'We could not find the recipe. Please try another one';
   _successMessage;
-  
+
   addHandlerRender(handler) {
-    ['hashchange', 'load'].forEach(event =>
-      window.addEventListener(event, handler)
-    );
+    ['hashchange', 'load'].forEach(event => {
+      window.addEventListener(event, handler);
+    });
   }
 
   _generateMarkup() {
@@ -105,7 +105,7 @@ class RecipeView extends View {
           <use href="${icons}#icon-check"></use>
         </svg>
         <div class="recipe__quantity">${
-          ing.quantity ? new Fraction(ing.quantity).toString() : ''
+          ing.quantity ? fracty(ing.quantity).toString() : ''
         }</div>
         <div class="recipe__description">
           <span class="recipe__unit">${ing.unit}</span>
