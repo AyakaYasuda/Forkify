@@ -22,11 +22,16 @@ const controllRecipes = async function () {
 
     // 1) Loading recipe
     await model.loadRecipe(id);
-
+    
     // 2) Rendering recipe
+    console.log(model.state.recipe);
     recipeView.render(model.state.recipe);
+
+    // TEST
+    controlServeings();
   } catch (err) {
     recipeView.renderError();
+    console.error(err);
   }
 };
 
@@ -36,14 +41,14 @@ const controllSearchResults = async function () {
     // 1) Get search query
     const query = searchView.getQuery();
     if (!query) return;
-
+    
     // 2) Load search results
     await model.loadSearchResults(query);
-
+    
     // 3) Render results
     // resultView.render(model.state.search.results);
     resultView.render(model.getSearchResultsPage());
-
+    
     // 4) Render initial pagination page
     paginationView.render(model.state.search);
   } catch (err) {
@@ -57,6 +62,14 @@ const controllPagination = function (goToPage) {
 
   // 2) Render NEW initial pagination page
   paginationView.render(model.state.search);
+};
+
+const controlServeings = function () {
+  // Update the recipe servings (in state)
+  model.updateServings(8);
+
+  // Update the recipe view
+  recipeView.render(model.state.recipe);
 };
 
 const init = function () {
