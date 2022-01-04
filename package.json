@@ -1,0 +1,32 @@
+{
+  "name": "forkify",
+  "version": "1.0.0",
+  "description": "Recipe application",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AyakaYasuda/Forkify.git"
+  },
+  "author": "Ayaka Yasuda",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AyakaYasuda/Forkify/issues"
+  },
+  "homepage": "https://github.com/AyakaYasuda/Forkify#readme",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.0.1",
+    "parcel": "^2.0.0-beta.1",
+    "sass": "^1.26.10"
+  },
+  "browsersList": [
+    "last 3 Chrome versions"
+  ],
+  "dependencies": {
+    "core-js": "^3.19.1",
+    "fractional": "^1.0.0",
+    "regenerator-runtime": "^0.13.9"
+  }
+}
